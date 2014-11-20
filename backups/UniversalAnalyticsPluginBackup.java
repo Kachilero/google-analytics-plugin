@@ -7,9 +7,6 @@ import com.google.analytics.tracking.android.Logger.LogLevel;
 import com.google.analytics.tracking.android.MapBuilder;
 import com.google.analytics.tracking.android.Tracker;
 
-//ALENOTE
-import com.google.analytics.HitBuilders.HitBuilder;
-
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CallbackContext;
 
@@ -27,9 +24,6 @@ public class UniversalAnalyticsPlugin extends CordovaPlugin {
     public static final String ADD_DIMENSION = "addCustomDimension";
     public static final String ADD_TRANSACTION = "addTransaction";
     public static final String ADD_TRANSACTION_ITEM = "addTransactionItem";
-
-    //ALENOTE
-    public static final string APP_TRACKER = "trackTime";
 
     public static final String SET_USER_ID = "setUserId";
     public static final String DEBUG_MODE = "debugMode";
@@ -96,16 +90,6 @@ public class UniversalAnalyticsPlugin extends CordovaPlugin {
             this.setUserId(userId, callbackContext);
         } else if (DEBUG_MODE.equals(action)) {
             this.debugMode(callbackContext);
-        } else if (APP_TRACKER.equals(action)) {
-            int length = args.length();//ALENOTE
-            if (length > 0) {
-                this.appTracker(
-                    args.getString(0),
-                    length > 1 ? args.getString(1) : "",
-                    length > 2 ? args.getString(2) : 0,
-                    callbackContext);
-            }
-            return true;
         }
         return false;
     }
@@ -218,27 +202,6 @@ public class UniversalAnalyticsPlugin extends CordovaPlugin {
             callbackContext.success("Add Transaction Item: " + id);
         } else {
             callbackContext.error("Expected non-empty ID.");
-        }
-    }
-
-    //ALENOTE
-    private void appTracker(String timingCategory, String timingVariable, long timingInterval) {
-        if (!trackerStarted){
-            callbackContext.error("Tracker not started");
-        }
-
-        Tracker tracker = GoogleAnalytics.getInstance(this.cordova.getActivity()).getDefaultTracker();
-        addCustomDimensionsToTracker(tracker);
-
-        if (null != id && id.length() > 0) {
-            tracker.set
-            tracker.send(MapBuilder
-                .createTiming(timingCategory, timingVariable, timingInterval)
-                .build()
-            );
-            callbackContext.success("Add App Timer: " + id);
-        } else {
-            callbackContext.error("Expected non-empty ID");
         }
     }
 
