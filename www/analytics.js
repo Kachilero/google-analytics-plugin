@@ -42,4 +42,10 @@ UniversalAnalyticsPlugin.prototype.addTransactionItem = function(transactionId, 
   cordova.exec(success, error, 'UniversalAnalytics', 'addTransactionItem', [transactionId, name ,sku, category, price, quantity, currencyCode]);
 };
 
+/*Google Analytics User Timings*/
+/*https://developers.google.com/analytics/devguides/collection/android/v4/usertimings*/
+UniversalAnalyticsPlugin.prototype.addUserTiming = function(timingCategory, timingVariable, timingInterval, success, error) {
+  cordova.exec(success, error, 'UniversalAnalytics', 'addUserTiming', [timingCategory, timingVariable, timingInterval]);
+};
+
 module.exports = new UniversalAnalyticsPlugin();
