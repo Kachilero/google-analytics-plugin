@@ -1,4 +1,4 @@
-package com.danielcwilson.plugins.analytics;
+package com.Kachilero.plugins.analytics;
 
 import com.google.analytics.tracking.android.Fields;
 import com.google.analytics.tracking.android.GAServiceManager;
