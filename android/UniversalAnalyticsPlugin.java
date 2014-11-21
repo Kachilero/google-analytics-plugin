@@ -99,7 +99,7 @@ public class UniversalAnalyticsPlugin extends CordovaPlugin {
                 this.appTracker(
                     args.getString(0),
                     length > 1 ? args.getString(1) : "",
-                    length > 2 ? args.getString(2) : 0,
+                    length > 2 ? args.getLong(2) : 0,
                     callbackContext);
             }
             return true;
