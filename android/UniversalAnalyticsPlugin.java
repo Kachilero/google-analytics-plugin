@@ -219,7 +219,7 @@ public class UniversalAnalyticsPlugin extends CordovaPlugin {
     }
 
     //ALENOTE
-    private void appTracker(String timingCategory, String timingVariable, long timingInterval) {
+    private void appTracker(String timingCategory, String timingVariable, long timingInterval, CallbackContext callbackContext) {
         if (!trackerStarted){
             callbackContext.error("Tracker not started");
         }
