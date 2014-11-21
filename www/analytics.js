@@ -44,7 +44,7 @@ UniversalAnalyticsPlugin.prototype.addTransactionItem = function(transactionId, 
 
 /*Google Analytics User Timings*/
 /*https://developers.google.com/analytics/devguides/collection/android/v4/usertimings*/
-UniversalAnalyticsPlugin.prototype.addUserTiming = function(timingCategory, timingVariable, timingInterval, success, error) {
+UniversalAnalyticsPlugin.prototype.addUserTiming = function(timingCategory, timingVariable, timingInterval, timingThing, success, error) {
   cordova.exec(success, error, 'UniversalAnalytics', 'addUserTiming', [timingCategory, timingVariable, timingInterval]);
 };
 

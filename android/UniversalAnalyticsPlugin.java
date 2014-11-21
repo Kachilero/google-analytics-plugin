@@ -100,6 +100,7 @@ public class UniversalAnalyticsPlugin extends CordovaPlugin {
                     args.getString(0),
                     length > 1 ? args.getLong(1) : 0,
                     length > 2 ? args.getString(2) : "",
+                    length > 3 ? args.getString(3) : "",
                     callbackContext);
             }
             return true;
@@ -219,7 +220,7 @@ public class UniversalAnalyticsPlugin extends CordovaPlugin {
     }
 
     //ALENOTE
-    private void appTracker(String timingCategory, long timingInterval, String timingVariable, CallbackContext callbackContext) {
+    private void appTracker(String timingCategory, long timingInterval, String timingVariable, String timingThing, CallbackContext callbackContext) {
         if (!trackerStarted){
             callbackContext.error("Tracker not started");
         }
@@ -229,7 +230,7 @@ public class UniversalAnalyticsPlugin extends CordovaPlugin {
 
         if (null != id && id.length() > 0) {
             tracker.send(MapBuilder
-                .createTiming(timingCategory, timingInterval, timingVariable)
+                .createTiming(timingCategory, timingInterval, timingVariable, timingThing)
                 .build()
             );
             callbackContext.success("Add App Timer: " + id);
