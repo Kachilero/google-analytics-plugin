@@ -7,9 +7,6 @@ import com.google.analytics.tracking.android.Logger.LogLevel;
 import com.google.analytics.tracking.android.MapBuilder;
 import com.google.analytics.tracking.android.Tracker;
 
-//ALENOTE
-import com.google.analytics.HitBuilders.HitBuilder;
-
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CallbackContext;
 
@@ -29,7 +26,7 @@ public class UniversalAnalyticsPlugin extends CordovaPlugin {
     public static final String ADD_TRANSACTION_ITEM = "addTransactionItem";
 
     //ALENOTE
-    public static final string APP_TRACKER = "trackTime";
+    public static final String APP_TRACKER = "trackTime";
 
     public static final String SET_USER_ID = "setUserId";
     public static final String DEBUG_MODE = "debugMode";
