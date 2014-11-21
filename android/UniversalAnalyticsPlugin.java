@@ -229,7 +229,7 @@ public class UniversalAnalyticsPlugin extends CordovaPlugin {
 
         if (null != id && id.length() > 0) {
             tracker.send(MapBuilder
-                .createTiming(timingCategory, timingInterval, timingVariable, callbackContext)
+                .createTiming(timingCategory, timingInterval, timingVariable)
                 .build()
             );
             callbackContext.success("Add App Timer: " + id);
