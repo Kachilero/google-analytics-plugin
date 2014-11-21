@@ -231,7 +231,6 @@ public class UniversalAnalyticsPlugin extends CordovaPlugin {
         addCustomDimensionsToTracker(tracker);
 
         if (null != id && id.length() > 0) {
-            tracker.set
             tracker.send(MapBuilder
                 .createTiming(timingCategory, timingVariable, timingInterval)
                 .build()
