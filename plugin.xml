@@ -12,7 +12,6 @@
   <js-module src="www/analytics.js" name="UniversalAnalytics">
     <clobbers target="analytics" />
   </js-module>
-
   <platform name="android">
     <config-file target="res/xml/config.xml" parent="/*">
       <feature name="UniversalAnalytics">
