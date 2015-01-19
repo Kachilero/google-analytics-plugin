@@ -106,17 +106,6 @@ public class UniversalAnalyticsPlugin extends CordovaPlugin {
             this.setUserId(userId, callbackContext);
         } else if (DEBUG_MODE.equals(action)) {
             this.debugMode(callbackContext);
-        } else if (APP_TRACKER.equals(action)) {
-            int length = args.length();//ALENOTE
-            if (length > 0) {
-                this.appTracker(
-                    args.getString(0),
-                    length > 1 ? args.getLong(1) : 0,
-                    length > 2 ? args.getString(2) : "",
-                    length > 3 ? args.getString(3) : "",
-                    callbackContext);
-            }
-            return true;
         }
         return false;
     }
